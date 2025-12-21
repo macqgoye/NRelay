@@ -23,6 +23,8 @@ pub struct Origin {
     pub kind: OriginKind,
     pub url: String,
     pub token: String,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub relay_url: Option<String>,
 }
 
 pub fn get_app_dir() -> Result<PathBuf> {

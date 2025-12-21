@@ -22,7 +22,10 @@ pub async fn list_origins() -> Result<()> {
 
     if origin_ids.is_empty() {
         println!("{}", "No origins configured.".yellow());
-        println!("\nAdd an origin with: {} origin add <id> --url <url> --token <token>", "nrelay".cyan());
+        println!(
+            "\nAdd an origin with: {} origin add <id> --url <url> --token <token>",
+            "nrelay".cyan()
+        );
         return Ok(());
     }
 
@@ -51,12 +54,19 @@ pub async fn list_origins() -> Result<()> {
     Ok(())
 }
 
-pub async fn add_origin(id: &str, url: &str, token: &str, kind: OriginKind) -> Result<()> {
+pub async fn add_origin(
+    id: &str,
+    url: &str,
+    token: &str,
+    kind: OriginKind,
+    relay_url: Option<&str>,
+) -> Result<()> {
     let origin = Origin {
         id: id.to_string(),
         kind,
         url: url.to_string(),
         token: token.to_string(),
+        relay_url: relay_url.map(|s| s.to_string()),
     };
 
     config::save_origin(&origin)?;
@@ -78,12 +88,20 @@ pub async fn set_origin(id: &str, key: &str, value: &str) -> Result<()> {
     match key {
         "url" => origin.url = value.to_string(),
         "token" => origin.token = value.to_string(),
-        "kind" => {
-            origin.kind = value
-                .parse()
-                .map_err(|e: String| anyhow::anyhow!(e))?;
+        "relay_url" => {
+            origin.relay_url = if value.is_empty() {
+                None
+            } else {
+                Some(value.to_string())
+            }
         }
-        _ => anyhow::bail!("Unknown key '{}'. Valid keys: url, token, kind", key),
+        "kind" => {
+            origin.kind = value.parse().map_err(|e: String| anyhow::anyhow!(e))?;
+        }
+        _ => anyhow::bail!(
+            "Unknown key '{}'. Valid keys: url, token, kind, relay_url",
+            key
+        ),
     }
 
     config::save_origin(&origin)?;
@@ -95,6 +113,8 @@ pub async fn set_origin(id: &str, key: &str, value: &str) -> Result<()> {
         key.yellow(),
         if key == "token" {
             "***".to_string()
+        } else if value.is_empty() && key == "relay_url" {
+            "(cleared)".to_string()
         } else {
             value.to_string()
         }
@@ -109,8 +129,12 @@ pub async fn get_origin(id: &str, key: &str) -> Result<()> {
     let value = match key {
         "url" => origin.url,
         "token" => origin.token,
+        "relay_url" => origin.relay_url.unwrap_or_else(|| "".to_string()),
         "kind" => format!("{}", origin.kind),
-        _ => anyhow::bail!("Unknown key '{}'. Valid keys: url, token, kind", key),
+        _ => anyhow::bail!(
+            "Unknown key '{}'. Valid keys: url, token, kind, relay_url",
+            key
+        ),
     };
 
     println!("{}", value);

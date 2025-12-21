@@ -52,9 +52,12 @@ pub async fn start_tunnel(
 
     let client_exe = get_client_executable()?;
 
-    // Use relay_addr and relay_port from tunnel_info if available
+    // Use origin.relay_url if available, otherwise use relay_addr and relay_port from tunnel_info
     // Otherwise fall back to extracting from origin URL
-    let server_addr = if let Some(relay_addr) = &tunnel_info.relay_addr {
+    let server_addr = if let Some(relay_url) = &origin.relay_url {
+        // If origin has relay_url configured, use it directly
+        extract_server_addr(relay_url)?
+    } else if let Some(relay_addr) = &tunnel_info.relay_addr {
         // If relay_addr is set, use it with relay_port
         let port = tunnel_info.relay_port.unwrap_or(7000);
         format!("{}:{}", relay_addr, port)

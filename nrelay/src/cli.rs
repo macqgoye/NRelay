@@ -83,6 +83,9 @@ pub enum OriginCommands {
         /// Origin kind (server or service)
         #[arg(long, default_value = "service")]
         kind: OriginKind,
+        /// Optional relay URL to use instead of server-provided relay address
+        #[arg(long)]
+        relay_url: Option<String>,
     },
     /// Set origin configuration value
     Set {
