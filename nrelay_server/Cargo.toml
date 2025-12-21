@@ -1,0 +1,31 @@
+[package]
+name = "nrelay_server"
+version.workspace = true
+edition.workspace = true
+
+[[bin]]
+name = "nrelay-server"
+path = "src/main.rs"
+
+[dependencies]
+nrelay_core = { path = "../nrelay_core" }
+nrelay_proto_http = { path = "../nrelay_proto_http" }
+nrelay_proto_sni = { path = "../nrelay_proto_sni" }
+nrelay_proto_mc = { path = "../nrelay_proto_mc" }
+nrelay_proto_tcp = { path = "../nrelay_proto_tcp" }
+nrelay_proto_udp = { path = "../nrelay_proto_udp" }
+
+tokio.workspace = true
+tracing.workspace = true
+tracing-subscriber.workspace = true
+axum.workspace = true
+tower.workspace = true
+tower-http.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+anyhow.workspace = true
+clap.workspace = true
+dotenv.workspace = true
+uuid.workspace = true
+rand.workspace = true
+bytes.workspace = true

@@ -1,0 +1,47 @@
+syntax = "proto3";
+
+package nrelay.control;
+
+enum AuthMode {
+  AUTH_CONTROL = 0;
+  AUTH_TUNNEL = 1;
+}
+
+enum TunnelKind {
+  HTTP = 0;
+  HTTPS = 1;
+  TCP_RAW = 2;
+  UDP_RAW = 3;
+  MINECRAFT = 4;
+  SSH = 5;
+  TLS_SNI = 6;
+}
+
+message ClientAuth {
+  AuthMode mode = 1;
+  string tunnel_token = 2;
+}
+
+message AuthResult {
+  bool success = 1;
+  string message = 2;
+  string tunnel_id = 3;
+}
+
+message OpenTunnelRequest {
+  string tunnel_id = 1;
+  string connection_id = 2;
+}
+
+message TunnelOk {
+  string connection_id = 1;
+}
+
+message ControlMessage {
+  oneof payload {
+    ClientAuth auth = 1;
+    AuthResult auth_result = 2;
+    OpenTunnelRequest open_tunnel_request = 3;
+    TunnelOk tunnel_ok = 4;
+  }
+}

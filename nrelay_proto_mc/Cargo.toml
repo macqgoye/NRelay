@@ -1,0 +1,6 @@
+[package]
+name = "nrelay_proto_mc"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]

@@ -1,0 +1,6 @@
+[package]
+name = "nrelay_proto_sni"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]

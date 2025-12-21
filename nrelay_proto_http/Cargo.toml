@@ -1,0 +1,8 @@
+[package]
+name = "nrelay_proto_http"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+httparse.workspace = true
+bytes.workspace = true

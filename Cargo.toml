@@ -1,0 +1,39 @@
+[workspace]
+members = [
+    "nrelay",
+    "nrelay_core",
+    "nrelay_server",
+    "nrelay_client",
+    "nrelay_proto_tcp",
+    "nrelay_proto_udp",
+    "nrelay_proto_http",
+    "nrelay_proto_sni",
+    "nrelay_proto_mc",
+]
+resolver = "2"
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+authors = ["Sammwy"]
+license = "MIT"
+
+[workspace.dependencies]
+tokio = { version = "1.40", features = ["full"] }
+prost = "0.13"
+prost-types = "0.13"
+bytes = "1.7"
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+anyhow = "1.0"
+thiserror = "1.0"
+axum = "0.7"
+tower = "0.5"
+tower-http = { version = "0.5", features = ["trace"] }
+clap = { version = "4.5", features = ["derive", "env"] }
+dotenv = "0.15"
+uuid = { version = "1.10", features = ["v4", "serde"] }
+rand = "0.8"
+httparse = "1.9"

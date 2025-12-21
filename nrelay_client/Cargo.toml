@@ -1,0 +1,18 @@
+[package]
+name = "nrelay_client"
+version.workspace = true
+edition.workspace = true
+
+[[bin]]
+name = "nrelay-client"
+path = "src/main.rs"
+
+[dependencies]
+nrelay_core = { path = "../nrelay_core" }
+nrelay_proto_tcp = { path = "../nrelay_proto_tcp" }
+
+tokio.workspace = true
+tracing.workspace = true
+tracing-subscriber.workspace = true
+anyhow.workspace = true
+clap.workspace = true
