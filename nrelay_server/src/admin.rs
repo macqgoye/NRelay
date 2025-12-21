@@ -19,8 +19,8 @@ pub struct AdminState {
     pub public_domain: String,
     pub http_port: u16,
     pub https_port: u16,
-    pub relay_domain: Option<String>,
-    pub client_port: u16,
+    pub relay_domain: String,
+    pub relay_port: u16,
 }
 
 pub fn create_admin_router(state: AdminState) -> Router {
@@ -99,8 +99,8 @@ async fn create_tunnel(
         .insert(info.tunnel_id.clone(), tunnel_state);
 
     // Set relay_addr and relay_port
-    info.relay_addr = state.relay_domain.clone();
-    info.relay_port = Some(state.client_port);
+    info.relay_addr = Some(state.relay_domain.clone());
+    info.relay_port = Some(state.relay_port);
 
     info!(
         tunnel_id = %info.tunnel_id,

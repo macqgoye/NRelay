@@ -30,17 +30,17 @@ impl RelayServer {
     }
 
     pub async fn run(self) -> Result<()> {
-        let client_addr = format!("{}:{}", self.config.bind_addr, self.config.client_port);
-        let admin_addr = format!("{}:{}", self.config.bind_addr, self.config.admin_port);
+        let client_addr = format!("{}:{}", self.config.relay_bind, self.config.relay_port);
+        let admin_addr = format!("{}:{}", self.config.admin_bind, self.config.admin_port);
 
         let admin_state = AdminState {
             tunnels: self.tunnels.clone(),
             admin_token: self.config.admin_token()?,
-            public_domain: self.config.public_domain.clone(),
+            public_domain: self.config.relay_domain.clone(),
             http_port: 80,
             https_port: 443,
             relay_domain: self.config.relay_domain.clone(),
-            client_port: self.config.client_port,
+            relay_port: self.config.relay_port,
         };
 
         let admin_router = create_admin_router(admin_state);

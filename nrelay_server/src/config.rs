@@ -5,10 +5,13 @@ use clap::Parser;
 #[command(about = "NRelay reverse tunnel server")]
 pub struct Config {
     #[arg(long, default_value = "0.0.0.0")]
-    pub bind_addr: String,
+    pub relay_bind: String,
 
     #[arg(long, default_value = "7000")]
-    pub client_port: u16,
+    pub relay_port: u16,
+
+    #[arg(long, default_value = "0.0.0.0")]
+    pub admin_bind: String,
 
     #[arg(long, default_value = "7001")]
     pub admin_port: u16,
@@ -16,11 +19,8 @@ pub struct Config {
     #[arg(long, env = "NRELAY_ADMIN_TOKEN")]
     pub admin_token: Option<String>,
 
-    #[arg(long, default_value = "example.com")]
-    pub public_domain: String,
-
-    #[arg(long)]
-    pub relay_domain: Option<String>,
+    #[arg(long, default_value = "localhost")]
+    pub relay_domain: String,
 }
 
 impl Config {

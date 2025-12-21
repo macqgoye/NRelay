@@ -24,7 +24,7 @@ async fn main() -> Result<()> {
     let config = Config::parse();
     
     info!("Starting NRelay server");
-    info!("Client control port: {}", config.client_port);
+    info!("Relay control port: {}", config.relay_port);
     info!("Admin API port: {}", config.admin_port);
     
     let server = RelayServer::new(config).await?;
